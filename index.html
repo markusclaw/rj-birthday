@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJ's Birthday Bash 🎉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes vomit-rainbow {
+      0% { color: #ff006e; text-shadow: 0 0 10px #ff006e; }
+      25% { color: #ffbe0b; text-shadow: 0 0 10px #ffbe0b; }
+      50% { color: #00f5ff; text-shadow: 0 0 10px #00f5ff; }
+      75% { color: #ff006e; text-shadow: 0 0 10px #ff006e; }
+      100% { color: #ffbe0b; text-shadow: 0 0 10px #ffbe0b; }
+    }
+
+    @keyframes rotate-chaos {
+      0% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(5deg) scale(1.05); }
+      50% { transform: rotate(0deg) scale(1); }
+      75% { transform: rotate(-5deg) scale(1.05); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    @keyframes pulse-insane {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    @keyframes bounce-wild {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    body {
+      background: linear-gradient(45deg, #0d0221 0%, #1a0033 25%, #2d0052 50%, #1a0033 75%, #0d0221 100%);
+      background-size: 400% 400%;
+      animation: vomit-rainbow 8s infinite;
+      font-family: 'Comic Sans MS', 'Brush Script MT', cursive;
+      color: #00ff88;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      background: radial-gradient(circle, #ffff00, transparent 70%);
+      border-radius: 50%;
+      animation: pulse-insane 2s infinite;
+    }
+
+    .container {
+      max-width: 900px;
+      background: linear-gradient(135deg, #ff006e, #ffbe0b, #00f5ff, #ff006e);
+      padding: 3px;
+      border-radius: 20px;
+      animation: rotate-chaos 4s infinite;
+    }
+
+    .inner {
+      background: #0d0221;
+      padding: 50px;
+      border-radius: 17px;
+      border: 5px dashed #00ff88;
+      box-shadow: 0 0 50px rgba(255, 0, 110, 0.8), 0 0 30px rgba(0, 245, 255, 0.6);
+    }
+
+    h1 {
+      font-size: 4em;
+      text-align: center;
+      animation: vomit-rainbow 4s infinite;
+      text-shadow: 3px 3px 0 #ff006e, 6px 6px 0 #00f5ff, 9px 9px 0 #ffbe0b;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      animation: bounce-wild 2s infinite;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.5em;
+      color: #ffbe0b;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px #ffbe0b;
+      animation: pulse-insane 1.5s infinite;
+    }
+
+    .form-section {
+      background: linear-gradient(45deg, #ff006e, #00f5ff);
+      padding: 3px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .form-inner {
+      background: #0d0221;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .form-inner h2 {
+      color: #00ff88;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00ff88;
+      font-size: 1.8em;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      background: #1a0033;
+      border: 3px solid #ffbe0b;
+      color: #00ff88;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1.1em;
+      border-radius: 10px;
+      resize: vertical;
+      min-height: 120px;
+      box-shadow: 0 0 20px rgba(255, 190, 11, 0.5);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background: #1a0033;
+      border: 3px solid #00f5ff;
+      color: #00ff88;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #ff006e, #ffbe0b);
+      color: #0d0221;
+      border: none;
+      font-size: 1.3em;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Comic Sans MS', cursive;
+      box-shadow: 0 0 30px rgba(255, 0, 110, 0.7);
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 0, 110, 1), 0 0 30px rgba(255, 190, 11, 1);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .messages-section {
+      margin-top: 40px;
+    }
+
+    .messages-title {
+      color: #00f5ff;
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px #00f5ff;
+      animation: pulse-insane 2s infinite;
+    }
+
+    .message-card {
+      background: linear-gradient(135deg, #ffbe0b, #ff006e);
+      padding: 3px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      animation: bounce-wild 3s infinite;
+    }
+
+    .message-inner {
+      background: #0d0221;
+      padding: 20px;
+      border-radius: 9px;
+      border-left: 5px solid #00f5ff;
+    }
+
+    .message-author {
+      color: #ffbe0b;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ffbe0b;
+    }
+
+    .message-text {
+      color: #00ff88;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .loading {
+      text-align: center;
+      color: #00ff88;
+      font-size: 1.2em;
+      animation: pulse-insane 1s infinite;
+    }
+
+    .success-msg {
+      color: #00ff88;
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 10px;
+      animation: pulse-insane 1s infinite;
+      text-shadow: 0 0 15px #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  
+  <div class="container">
+    <div class="inner">
+      <h1>🎉 RJ's BIRTHDAY BASH 🎉</h1>
+      <div class="subtitle">June 14 — LEGEND STATUS UNLOCKED 🔥</div>
+
+      <div class="form-section">
+        <div class="form-inner">
+          <h2>DROP YOUR ROAST 🎤</h2>
+          <form id="roastForm">
+            <input 
+              type="text" 
+              id="name" 
+              placeholder="Your Name (or alias)" 
+              required
+            >
+            <textarea 
+              id="message" 
+              placeholder="Your birthday roast / message goes HERE... keep it spicy! 🌶️" 
+              required
+            ></textarea>
+            <button type="submit">SEND THE ROAST 🚀</button>
+            <div id="successMsg" class="success-msg" style="display: none;">✨ ROAST RECEIVED! ✨</div>
+          </form>
+        </div>
+      </div>
+
+      <div class="messages-section">
+        <h2 class="messages-title">🎪 THE ROASTS ARE COMING IN 🎪</h2>
+        <div id="messagesContainer" class="loading">Loading the chaos...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Generate stars
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = (Math.random() * 3 + 1) + 'px';
+        star.style.height = star.style.width;
+        star.style.animationDelay = Math.random() * 2 + 's';
+        starsContainer.appendChild(star);
+      }
+    }
+    createStars();
+
+    // Messages storage
+    let messages = JSON.parse(localStorage.getItem('rjMessages')) || [];
+
+    // Display messages
+    function displayMessages() {
+      const container = document.getElementById('messagesContainer');
+      if (messages.length === 0) {
+        container.innerHTML = '<div class="loading">🤔 No roasts yet... be the first! 🤔</div>';
+        return;
+      }
+      container.innerHTML = messages.map((msg, idx) => `
+        <div class="message-card" style="animation-delay: ${idx * 0.1}s;">
+          <div class="message-inner">
+            <div class="message-author">— ${msg.name}</div>
+            <div class="message-text">${msg.message}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Handle form submit
+    document.getElementById('roastForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+      
+      // Add to local storage
+      messages.push({ name, message });
+      localStorage.setItem('rjMessages', JSON.stringify(messages));
+      
+      // Reset form
+      document.getElementById('roastForm').reset();
+      
+      // Show success
+      const successMsg = document.getElementById('successMsg');
+      successMsg.style.display = 'block';
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 3000);
+      
+      // Update display
+      displayMessages();
+    });
+
+    displayMessages();
+  </script>
+</body>
+</html>

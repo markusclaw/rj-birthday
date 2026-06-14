@@ -1,0 +1,6 @@
+name = "rj-birthday"
+type = "javascript"
+account_id = "c60d73bd6bdd2bfa6aba42a117a4b69e"
+
+[env.production]
+routes = [{ pattern = "rj-birthday.pages.dev", zone_name = "pages.dev" }]
