@@ -11,36 +11,33 @@
       box-sizing: border-box;
     }
 
-    @keyframes vomit-rainbow {
-      0% { color: #ff006e; text-shadow: 0 0 10px #ff006e; }
-      25% { color: #ffbe0b; text-shadow: 0 0 10px #ffbe0b; }
-      50% { color: #00f5ff; text-shadow: 0 0 10px #00f5ff; }
-      75% { color: #ff006e; text-shadow: 0 0 10px #ff006e; }
-      100% { color: #ffbe0b; text-shadow: 0 0 10px #ffbe0b; }
+    @keyframes bg-neon-shift {
+      0% { background: linear-gradient(45deg, #0d0221 0%, #1a0033 25%, #2d0052 50%, #1a0033 75%, #0d0221 100%); }
+      25% { background: linear-gradient(45deg, #1a0033 0%, #2d0052 25%, #1a0033 50%, #0d0221 75%, #1a0033 100%); }
+      50% { background: linear-gradient(45deg, #2d0052 0%, #0d0221 25%, #1a0033 50%, #2d0052 75%, #0d0221 100%); }
+      75% { background: linear-gradient(45deg, #1a0033 0%, #0d0221 25%, #2d0052 50%, #1a0033 75%, #2d0052 100%); }
+      100% { background: linear-gradient(45deg, #0d0221 0%, #1a0033 25%, #2d0052 50%, #1a0033 75%, #0d0221 100%); }
     }
 
-    @keyframes rotate-chaos {
-      0% { transform: rotate(0deg) scale(1); }
-      25% { transform: rotate(5deg) scale(1.05); }
-      50% { transform: rotate(0deg) scale(1); }
-      75% { transform: rotate(-5deg) scale(1.05); }
-      100% { transform: rotate(0deg) scale(1); }
+    @keyframes subtle-glow {
+      0%, 100% { text-shadow: 0 0 10px #ff006e; }
+      50% { text-shadow: 0 0 20px #ff006e; }
     }
 
-    @keyframes pulse-insane {
+    @keyframes gentle-pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.8; }
     }
 
-    @keyframes bounce-wild {
+    @keyframes slight-float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-8px); }
     }
 
     body {
       background: linear-gradient(45deg, #0d0221 0%, #1a0033 25%, #2d0052 50%, #1a0033 75%, #0d0221 100%);
       background-size: 400% 400%;
-      animation: vomit-rainbow 8s infinite;
+      animation: bg-neon-shift 12s ease-in-out infinite;
       font-family: 'Comic Sans MS', 'Brush Script MT', cursive;
       color: #00ff88;
       min-height: 100vh;
@@ -74,7 +71,6 @@
       background: linear-gradient(135deg, #ff006e, #ffbe0b, #00f5ff, #ff006e);
       padding: 3px;
       border-radius: 20px;
-      animation: rotate-chaos 4s infinite;
     }
 
     .inner {
@@ -88,11 +84,10 @@
     h1 {
       font-size: 4em;
       text-align: center;
-      animation: vomit-rainbow 4s infinite;
+      animation: subtle-glow 3s ease-in-out infinite, slight-float 4s ease-in-out infinite;
       text-shadow: 3px 3px 0 #ff006e, 6px 6px 0 #00f5ff, 9px 9px 0 #ffbe0b;
       letter-spacing: 3px;
       margin-bottom: 20px;
-      animation: bounce-wild 2s infinite;
     }
 
     .subtitle {
@@ -101,7 +96,7 @@
       color: #ffbe0b;
       margin-bottom: 30px;
       text-shadow: 0 0 20px #ffbe0b;
-      animation: pulse-insane 1.5s infinite;
+      animation: gentle-pulse 3s ease-in-out infinite;
     }
 
     .form-section {
@@ -188,7 +183,7 @@
       text-align: center;
       margin-bottom: 20px;
       text-shadow: 0 0 20px #00f5ff;
-      animation: pulse-insane 2s infinite;
+      animation: gentle-pulse 3s ease-in-out infinite;
     }
 
     .message-card {
@@ -196,7 +191,6 @@
       padding: 3px;
       border-radius: 12px;
       margin-bottom: 15px;
-      animation: bounce-wild 3s infinite;
     }
 
     .message-inner {
@@ -224,7 +218,7 @@
       text-align: center;
       color: #00ff88;
       font-size: 1.2em;
-      animation: pulse-insane 1s infinite;
+      animation: gentle-pulse 2.5s ease-in-out infinite;
     }
 
     .success-msg {
@@ -232,7 +226,7 @@
       text-align: center;
       font-size: 1.2em;
       margin-top: 10px;
-      animation: pulse-insane 1s infinite;
+      animation: gentle-pulse 2.5s ease-in-out infinite;
       text-shadow: 0 0 15px #00ff88;
     }
   </style>
