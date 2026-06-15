@@ -413,7 +413,7 @@
 
       <div class="form-section">
         <div class="form-inner">
-          <h2>DROP YOUR ROAST 🎤</h2>
+          <h2>ADD YOUR NAME TO THE ROAST 🎤</h2>
           <form id="roastForm">
             <input 
               type="text" 
@@ -421,12 +421,7 @@
               placeholder="Your Name (or alias)" 
               required
             >
-            <textarea 
-              id="message" 
-              placeholder="Your birthday roast / message goes HERE... keep it spicy! 🌶️" 
-              required
-            ></textarea>
-            <button type="submit">SEND THE ROAST 🚀</button>
+            <button type="submit">LET THE ROASTING BEGIN 🚀</button>
             <div id="successMsg" class="success-msg" style="display: none;">✨ ROAST RECEIVED! ✨</div>
           </form>
         </div>
@@ -456,6 +451,26 @@
     }
     createStars();
 
+    // RJ Roast Generator
+    const rjRoasts = [
+      "RJ's been fine-tuning his mixer for 41 years, but nothing can turn down the volume on getting older.",
+      "The only frequency RJ can't master? The one that stops time from running out.",
+      "Audio engineer by day, prostate chart enthusiast by June 14th.",
+      "RJ controls every mixer setting perfectly... except the aging one.",
+      "41 years of perfect sound, zero years of mastering the art of staying young.",
+      "RJ: the man who can balance every audio level except his own biological clock.",
+      "He can mix like a pro, but he ages like a normal human. Tale as old as time.",
+      "RJ's prostate just sent him a birthday card: 'Thanks for the memories.' 💀",
+      "Best audio engineer in the room... worst at preventing wrinkles.",
+      "RJ spent 41 years getting his sound perfect and one day realizing his body wasn't listening.",
+      "Happy Birthday to the man who can make anything sound good except his knees.",
+      "41 and still got the mixer skills. The rest? ...working on it."
+    ];
+
+    function generateRoast() {
+      return rjRoasts[Math.floor(Math.random() * rjRoasts.length)];
+    }
+
     // Messages storage
     let messages = JSON.parse(localStorage.getItem('rjMessages')) || [];
 
@@ -481,7 +496,7 @@
       e.preventDefault();
       
       const name = document.getElementById('name').value;
-      const message = document.getElementById('message').value;
+      const message = generateRoast(); // Auto-generate roast instead of user input
       
       // Add to local storage
       messages.push({ name, message });
