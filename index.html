@@ -545,7 +545,12 @@
     createStars();
 
     // Messages storage
-    let messages = JSON.parse(localStorage.getItem('rjMessages')) || [];
+    let messages = JSON.parse(localStorage.getItem('rjMessages')) || [
+      {
+        name: "Rafa",
+        message: "Ramiro, Antes que nada quiero desearte feliz aniversario bro! Que te la pases de poca madre. Que chingon a ver coincidido en esta vida carnal. Abrazo enerome hasta Texas y espero pronto podamos verte!"
+      }
+    ];
 
     // Display messages
     function displayMessages() {

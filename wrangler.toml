@@ -1,6 +1,10 @@
-name = "rj-birthday"
+name = "rj-birthday-api"
+main = "src/index.ts"
 type = "javascript"
 account_id = "c60d73bd6bdd2bfa6aba42a117a4b69e"
+compatibility_date = "2024-04-03"
 
-[env.production]
-routes = [{ pattern = "rj-birthday.pages.dev", zone_name = "pages.dev" }]
+[[kv_namespaces]]
+binding = "MESSAGES"
+id = "rj_birthday_messages"
+preview_id = "rj_birthday_messages_preview"
