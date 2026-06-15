@@ -411,9 +411,29 @@
         <img src="rj-portrait.jpg" alt="RJ's Birthday Portrait" style="width: 100%; height: auto; display: block;">
       </div>
 
+      <div style="background: linear-gradient(135deg, #00f5ff, #ff006e); padding: 3px; border-radius: 15px; margin: 30px 0;">
+        <div style="background: #0d0221; padding: 30px; border-radius: 12px; border-left: 5px solid #ffbe0b;">
+          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+            ¡RJ, mi querido ingeniero de audio, feliz cumpleaños, carnal! Ya 41 años, y lo único que has subido es el volumen, porque las frecuencias de tus chistes ya no dan la talla, ¡como tu mixer que se queda en el modo "viejo y sordo"! Pero tranquilo, aún tienes más chistes de papá que pelos en la cabeza.
+          </p>
+          <p style="color: #ffbe0b; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+            Hablando de tu mixer, lo único que se escucha más distorsionado que tu música son tus habilidades, bro. A este paso, va a ser más fácil conectar a tu suegra que a tus cables, ¡así que mejor cuídala antes de que le subas el volumen y la quemes en el proceso! Recuerda, compadre, la juventud es como un buen sonido: hay que ecualizarlo antes de que se vuelva ruido blanco.
+          </p>
+          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+            Oye, en este cumpleaños, recuerda que el tiempo no perdona. Tus respuestas tardan más que las mezclas en la fiesta de la cuadra. Pero tranquilo, siempre habrá una salida: "Cuando la vida te dé limones, haz limonada... y ponle un poco de vodka para que suene mejor". ¡Vaya, eso sí es un mixer bien balanceado!
+          </p>
+          <p style="color: #ffbe0b; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+            Aprovecha que todavía puedes girar algunos knobs, porque más pronto que tarde, te voy a tener que poner un aviso de "no tocar", ya que al paso que vas, próximamente necesitarás un asistente para que compita contigo en eso de contar chistes, ¡y ni hablar de mezclar!
+          </p>
+          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8;">
+            Así que levanta tu copa, mi rey de los chistes de papá, y brinda por los 41, que ya te queda poco para ser un "papá" de verdad. ¡Que sigan los papas y las risas, y que el audio nunca se detenga! ¡Salud, RJ! 🍻🎂⚽
+          </p>
+        </div>
+      </div>
+
       <div class="form-section">
         <div class="form-inner">
-          <h2>ADD YOUR NAME TO THE ROAST 🎤</h2>
+          <h2>LEAVE YOUR BIRTHDAY VIBES 🎤</h2>
           <form id="roastForm">
             <input 
               type="text" 
@@ -421,14 +441,19 @@
               placeholder="Your Name (or alias)" 
               required
             >
-            <button type="submit">LET THE ROASTING BEGIN 🚀</button>
-            <div id="successMsg" class="success-msg" style="display: none;">✨ ROAST RECEIVED! ✨</div>
+            <textarea 
+              id="message" 
+              placeholder="Send RJ your birthday love (jokes, memories, wishes)... or keep it short!" 
+              required
+            ></textarea>
+            <button type="submit">SEND THE VIBES 🚀</button>
+            <div id="successMsg" class="success-msg" style="display: none;">✨ VIBES RECEIVED! ✨</div>
           </form>
         </div>
       </div>
 
       <div class="messages-section">
-        <h2 class="messages-title">🎪 THE ROASTS ARE COMING IN 🎪</h2>
+        <h2 class="messages-title">🎪 BIRTHDAY MESSAGES FROM THE CREW 🎪</h2>
         <div id="messagesContainer" class="loading">Loading the chaos...</div>
       </div>
     </div>
