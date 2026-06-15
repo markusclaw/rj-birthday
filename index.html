@@ -397,6 +397,48 @@
       animation: gentle-pulse 2.5s ease-in-out infinite;
       text-shadow: 0 0 15px #00ff88;
     }
+
+    .birthday-message {
+      background: linear-gradient(135deg, #00f5ff, #ff006e);
+      padding: 3px;
+      border-radius: 15px;
+      margin: 30px 0;
+    }
+
+    .birthday-message-inner {
+      background: #0d0221;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #ffbe0b;
+    }
+
+    .birthday-message p {
+      font-size: 1.05em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .birthday-message p:nth-child(odd) {
+      color: #00ff88;
+      text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    }
+
+    .birthday-message p:nth-child(even) {
+      color: #ffbe0b;
+      text-shadow: 0 0 10px rgba(255, 190, 11, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      .birthday-message-inner {
+        padding: 15px;
+      }
+
+      .birthday-message p {
+        font-size: 0.95em;
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -411,21 +453,21 @@
         <img src="rj-portrait.jpg" alt="RJ's Birthday Portrait" style="width: 100%; height: auto; display: block;">
       </div>
 
-      <div style="background: linear-gradient(135deg, #00f5ff, #ff006e); padding: 3px; border-radius: 15px; margin: 30px 0;">
-        <div style="background: #0d0221; padding: 30px; border-radius: 12px; border-left: 5px solid #ffbe0b;">
-          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+      <div class="birthday-message">
+        <div class="birthday-message-inner">
+          <p>
             ¡RJ, mi querido ingeniero de audio, feliz cumpleaños, carnal! Ya 41 años, y lo único que has subido es el volumen, porque las frecuencias de tus chistes ya no dan la talla, ¡como tu mixer que se queda en el modo "viejo y sordo"! Pero tranquilo, aún tienes más chistes de papá que pelos en la cabeza.
           </p>
-          <p style="color: #ffbe0b; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+          <p>
             Hablando de tu mixer, lo único que se escucha más distorsionado que tu música son tus habilidades, bro. A este paso, va a ser más fácil conectar a tu suegra que a tus cables, ¡así que mejor cuídala antes de que le subas el volumen y la quemes en el proceso! Recuerda, compadre, la juventud es como un buen sonido: hay que ecualizarlo antes de que se vuelva ruido blanco.
           </p>
-          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+          <p>
             Oye, en este cumpleaños, recuerda que el tiempo no perdona. Tus respuestas tardan más que las mezclas en la fiesta de la cuadra. Pero tranquilo, siempre habrá una salida: "Cuando la vida te dé limones, haz limonada... y ponle un poco de vodka para que suene mejor". ¡Vaya, eso sí es un mixer bien balanceado!
           </p>
-          <p style="color: #ffbe0b; font-size: 1.1em; line-height: 1.8; margin-bottom: 15px;">
+          <p>
             Aprovecha que todavía puedes girar algunos knobs, porque más pronto que tarde, te voy a tener que poner un aviso de "no tocar", ya que al paso que vas, próximamente necesitarás un asistente para que compita contigo en eso de contar chistes, ¡y ni hablar de mezclar!
           </p>
-          <p style="color: #00ff88; font-size: 1.1em; line-height: 1.8;">
+          <p>
             Así que levanta tu copa, mi rey de los chistes de papá, y brinda por los 41, que ya te queda poco para ser un "papá" de verdad. ¡Que sigan los papas y las risas, y que el audio nunca se detenga! ¡Salud, RJ! 🍻🎂⚽
           </p>
         </div>
@@ -443,7 +485,7 @@
             >
             <textarea 
               id="message" 
-              placeholder="Send RJ your birthday love (jokes, memories, wishes)... or keep it short!" 
+              placeholder="Add your blessing, joke, or well-wishes for RJ!" 
               required
             ></textarea>
             <button type="submit">SEND THE VIBES 🚀</button>
@@ -453,7 +495,7 @@
       </div>
 
       <div class="messages-section">
-        <h2 class="messages-title">🎪 BIRTHDAY MESSAGES FROM THE CREW 🎪</h2>
+        <h2 class="messages-title">🎪 CREW BLESSINGS 🎪</h2>
         <div id="messagesContainer" class="loading">Loading the chaos...</div>
       </div>
     </div>
@@ -476,25 +518,7 @@
     }
     createStars();
 
-    // RJ Roast Generator
-    const rjRoasts = [
-      "RJ's been fine-tuning his mixer for 41 years, but nothing can turn down the volume on getting older.",
-      "The only frequency RJ can't master? The one that stops time from running out.",
-      "Audio engineer by day, prostate chart enthusiast by June 14th.",
-      "RJ controls every mixer setting perfectly... except the aging one.",
-      "41 years of perfect sound, zero years of mastering the art of staying young.",
-      "RJ: the man who can balance every audio level except his own biological clock.",
-      "He can mix like a pro, but he ages like a normal human. Tale as old as time.",
-      "RJ's prostate just sent him a birthday card: 'Thanks for the memories.' 💀",
-      "Best audio engineer in the room... worst at preventing wrinkles.",
-      "RJ spent 41 years getting his sound perfect and one day realizing his body wasn't listening.",
-      "Happy Birthday to the man who can make anything sound good except his knees.",
-      "41 and still got the mixer skills. The rest? ...working on it."
-    ];
 
-    function generateRoast() {
-      return rjRoasts[Math.floor(Math.random() * rjRoasts.length)];
-    }
 
     // Messages storage
     let messages = JSON.parse(localStorage.getItem('rjMessages')) || [];
@@ -521,7 +545,7 @@
       e.preventDefault();
       
       const name = document.getElementById('name').value;
-      const message = generateRoast(); // Auto-generate roast instead of user input
+      const message = document.getElementById('message').value;
       
       // Add to local storage
       messages.push({ name, message });
